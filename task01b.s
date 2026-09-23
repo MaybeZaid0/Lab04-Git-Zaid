@@ -1,8 +1,14 @@
+# get better ig
+
 .text
 .globl main
 
 main:
     li x10, 5 # n = 5
+    jal  x1, fact
+
+end:
+    j end
 
 fact:
     li x18, 1 # acc = 1
@@ -14,7 +20,4 @@ loop:
 endloop:
     add x10, x0, x18
     jalr x0, 0(x1)
-    ret
 
-end:
-    j end
